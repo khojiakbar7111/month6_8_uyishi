@@ -1,6 +1,8 @@
 import React from 'react'
+import { useGlobalContext } from '../contex'
 
-export default function Cards({products, deleteItem,   ediItem}) {
+export default function Cards() {
+  const {products, deleteItem,   ediItem} = useGlobalContext();
   return (
     <div className='carsd_box'>
       {products.map((item) => {

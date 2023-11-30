@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useGlobalContext } from '../contex'
 
-export default function Navbar({user}) {
+export default function Navbar() {
+  const {user} = useGlobalContext();
   return (
     <div className='navbar'>
         <ul className='nav_list'>

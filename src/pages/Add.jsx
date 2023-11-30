@@ -1,6 +1,8 @@
 import React from 'react'
+import { useGlobalContext } from '../contex'
 
-export default function Add({pname, setPname, price, setPrice, addProduct, edit, }) {
+export default function Add() {
+  const {pname, setPname, price, setPrice, addProduct, edit, } = useGlobalContext();
   return (
     <div>
        <form className='add_box'>

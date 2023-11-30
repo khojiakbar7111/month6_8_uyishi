@@ -1,6 +1,8 @@
+import { useGlobalContext } from "../contex"
 
 
-export default function Login({name,setName, psw,setPsw, login}) {
+export default function Login() {
+  const{name, setName, psw, setPsw, login} = useGlobalContext();
   return (
     <div>
 
