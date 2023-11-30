@@ -10,7 +10,7 @@ export default function Add() {
             <br />
             <input className='add_name' type="text" name='' id=''   value={price} placeholder='mahsulot narxi'  onChange={(e) => setPrice(e.target.value)} />
             <br />
-            <p>salom</p>
+            
             <button className='add_btn' onClick={() => addProduct()}>
               {edit ? 'edit' : 'add'}
             </button>
