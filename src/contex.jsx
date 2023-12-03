@@ -1,12 +1,38 @@
-import { createContext, useContext, useEffect, useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { getStore, getUser } from "./utilis";
 import { uid } from "uid";
+import { reducer } from "./reducer";
+import data from "./data";
+
+
+const initialState = {
+  amount:12,
+  loading: false,
+  total:0,
+  cart: data,
+}
 
 
 
  const AppContext = createContext();
 
  const AppProvider = ({children}) => {
+
+     // eslint-disable-next-line no-unused-vars
+     const [state, dispatch] = useReducer(reducer, initialState);
+
+     const clearCart = () => {
+      dispatch({type: " CLEAR "})
+     }
+     const inc = (id) => {
+     dispatch({type: "INC" , payload: id})
+     }
+     const dic = (id) => {
+     dispatch({type: "DIC" , payload: id})
+     }
+
 
      const [ name, setName] = useState('');
      const [ psw, setPsw] = useState('');
@@ -63,7 +89,9 @@ const id = uid();
 
 
     return(
-        <AppContext.Provider value={{name,
+        <AppContext.Provider value={{
+        ...state,
+          name,
         setName,
         psw,
         setPsw,
@@ -75,7 +103,7 @@ const id = uid();
           edit,setEdit,
           products,setProducts ,
           addProduct,
-          ediItem, deleteItem, useEffect} } >
+          ediItem, deleteItem, useEffect,clearCart, inc,dic} } >
             {children}
         </AppContext.Provider>
     )

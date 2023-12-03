@@ -8,7 +8,7 @@
      align-items: center;
      margin: auto;
       background-color: #d0c8c8;
-      
+
 }
 .nav_link{
     text-decoration: none;
@@ -115,6 +115,27 @@
     transition: 0.6s;
     color:#fff;
 }
-/* .navbar{
-    background-color: #d0c8c8;
-} */
+.service_box{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+.service_btn{
+    width: 50px;
+    border:none;
+    border-radius:7px;
+    cursor: pointer;
+}
+.crads_btn{
+    width: 130px;
+    margin: auto;
+    margin-left: 570px;
+    margin-top: 30px;
+    border:none;
+    border-radius:8px;
+    background-color:#228B22;
+    height: 25px;
+    color:#fff;
+    cursor: pointer;
+}
